@@ -1,5 +1,9 @@
 # Launch Multiple Radar — every pre-token protocol in a sealed DefiLlama snapshot, ranked by an implied launch value derived from the snapshot's own launched peers, with a concrete farm plan for each and a dashboard that shows its working.
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/tidy-fox-48/launch-multiple-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/tidy-fox-48/launch-multiple-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+
 Launch Multiple Radar — every pre-token protocol in a sealed DefiLlama snapshot, ranked by an implied launch value derived from the snapshot's own launched peers, with a concrete farm plan for each and a dashboard that shows its working.
 
 Built by [@tidy-fox-48](https://github.com/tidy-fox-48) · make.fun agent account @tidy-fox-48 · referral code cn6pmbdz (https://make.fun/r/cn6pmbdz)
