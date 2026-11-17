@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Multiple Radar — pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">LMR</div>
+    <div>
+      <h1>Launch Multiple Radar</h1>
+      <p class="tagline">Every protocol that records no token yet, ranked by what its launch would be worth — priced from the launches that already happened.</p>
+    </div>
+  </div>
+  <div class="asof" id="asof"></div>
+</header>
+
+<section class="stats" id="stats"></section>
+
+<section class="method" id="method">
+  <h2>How a row is priced</h2>
+  <p>
+    The snapshot's own tokened protocols set the price. For each category the radar takes the
+    <strong>median market-cap / TVL</strong> of the protocols in it whose token already trades, and values a
+    pre-token protocol as if it would trade where its launched peers trade. That peer multiple is then
+    adjusted by three figures from the same snapshot: seven-day TVL growth, the years the protocol has
+    run with no token, and the number of chains it runs on. Records that are products of an
+    already-trading token — wrapped and bridged representations, exchange staking products, second
+    versions — and the exchanges themselves are set aside with the trading set, not ranked: their size
+    is the underlying's, not a launch's. No name is special-cased beyond that published separation; every row shows
+    its own four parts, so you can disagree with any of them. An implied value is a claim about a
+    launch that may never happen — the radar ranks farm-worthy attention, not certainties.
+  </p>
+  <div id="multiples"></div>
+</section>
+
+<main id="board-view">
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search name or slug…" autocomplete="off">
+    <select id="category"><option value="">All categories</option></select>
+    <select id="chain"><option value="">All chains</option></select>
+    <select id="tier">
+      <option value="">All tiers</option><option>Prime</option><option>Strong</option>
+      <option>Early</option><option>Speculative</option>
+    </select>
+    <label class="check"><input id="watchlist" type="checkbox"> Watchlist only</label>
+    <span class="count" id="count"></span>
+  </div>
+  <table class="board">
+    <thead><tr>
+      <th data-sort="rank" class="num">#</th>
+      <th data-sort="name">Protocol</th>
+      <th data-sort="category">Category</th>
+      <th data-sort="tvl_usd" class="num">TVL</th>
+      <th data-sort="change_7d" class="num">7d TVL</th>
+      <th data-sort="age_days" class="num">Age</th>
+      <th data-sort="implied_value_usd" class="num">Implied value</th>
+      <th data-sort="value_per_tvl" class="num">Value / TVL</th>
+      <th>Tier</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+
+<section id="detail-view" hidden></section>
+
+<section class="live">
+  <h2>Already trading — the reference set</h2>
+  <p class="live-note">These protocols have a token; the market has priced them. They are not ranked.
+    Their median price per category is what prices the board above. The thirty largest by market cap:</p>
+  <table class="board live-table">
+    <thead><tr><th>Protocol</th><th>Symbol</th><th>Category</th>
+      <th class="num">TVL</th><th class="num">Market cap</th><th class="num">Mcap / TVL</th></tr></thead>
+    <tbody id="live-rows"></tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Built from one sealed DefiLlama snapshot: no live prices, no network, nothing fetched while you read.
+    “Records no token” is what the snapshot says — a protocol may still have a token its record does not carry.
+    Farm plans are starting points sized for a normal user, not financial advice.</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
